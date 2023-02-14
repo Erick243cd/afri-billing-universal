@@ -1,0 +1,87 @@
+
+#text-service, #image-service{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.form-signin {
+width: 100%;
+max-width: 330px;
+padding: 15px;
+margin: auto;
+background-color: transparent;
+}
+.form-signin .checkbox {
+font-weight: 400;
+}
+.form-signin .form-control {
+position: relative;
+box-sizing: border-box;
+height: auto;
+padding: 10px;
+font-size: 18px;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type="email"] {
+margin-bottom: -1px;
+border-bottom-right-radius: 0;
+border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+margin-bottom: 10px;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+}
+
+#searchBox{
+    
+}
+#display-result{
+    position: fixed;
+}
+
+.display-box-user{
+    position: relative;
+    /*display: none; /* Par défaut le resultat ne s'affiche pas*/
+}
+.display-box-user:hover{
+    cursor: pointer;
+    background-color: rgb(212, 211, 211);
+}
+.display-box-user  a{
+    color: rgb(19, 18, 18);
+    text-decoration: none;
+    display: block;
+}
+.display-box-user p, img{ 
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+.pointage-display h3, h5{
+    color: gray;
+    font-weight: bold;
+}
+
+/*Pagination links*/
+
+.pagination-links{
+    margin: 20px 0;
+}
+a.pagination-links strong{
+    padding: 8px 5px;
+    margin: 5px;
+    background: #f4f4f4;
+    border: 5px #ccc solid;
+}
+a.pagination-links{
+    padding: 2px 3px;
+    margin: 5px;
+    background: #f4f4f4;
+    color: cornflowerblue;
+    font-size: 18px;
+    border: 2px rgba(6, 3, 0, 0.52) solid;
+    border-radius: 20%;
+}
