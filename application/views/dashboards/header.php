@@ -232,16 +232,28 @@ if (empty($data['id'])) {
 				</a>
 				<ul class="nav nav-treeview collapse" id="configurations" style="font-size: small">
 					<?php if ($data['role_utilisateur'] == 'admin') : ?>
+                        <li class="nav-item">
+                            <a href="<?= site_url() ?>configurations/rate"
+                               class="list-group-item list-group-item-action waves-effect">
+                                <i class="fa fa-money-bill mr-3 ml-3  red-text mr-3"></i>Taux</a>
+                        </li>
+
 						<li class="nav-item">
 							<a href="<?= site_url() ?>sales_points"
 							   class="list-group-item list-group-item-action waves-effect">
 								<i class="fa fa-cog mr-3 ml-3  blue-text mr-3"></i>Points de vente</a>
 						</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url() ?>configurations/companyInfos"
+                               class="list-group-item list-group-item-action waves-effect">
+                                <i class="fa fa-object-group red-text  mr-3  ml-3"></i>Infos de l'entreprise</a>
+                        </li>
 						<li class="nav-item">
 							<a href="<?= base_url() ?>users"
 							   class="list-group-item list-group-item-action waves-effect">
 								<i class="fa fa-users green-text mr-3  ml-3"></i>Utilisateurs</a>
 						</li>
+
 						<li class="nav-item">
 							<a href="<?= base_url() ?>categories"
 							   class="list-group-item list-group-item-action waves-effect">
