@@ -12,13 +12,20 @@
             </div>
         </div>
         <div class="card fadeIn mb-4">
-            <div class="text-danger">
-                <?php echo validation_errors(); ?>
-            </div>
+
+            <?php if ($this->session->flashdata('success')) : ?>
+                <div class="alert alert-success alert-dismissible" role="alert" id="connexion-failed">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="btn-close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong><?php echo $this->session->flashdata('success'); ?></strong>
+                </div>
+            <?php endif; ?>
+
             <div class="card-body">
                 <?php echo form_open_multipart('configurations/updateCompanyInfos'); ?>
                 <div class="row">
-                    <div class="col-md-3 col-sm-3">
+                    <div class="col-md-4 col-sm-4">
                         <div class="form-group">
                             <label for="">Nom de l'entreprise</label>
                             <input type="text" class="form-control" required="required"
@@ -27,7 +34,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 col-sm-3">
+                    <div class="col-md-4 col-sm-4">
                         <div class="form-group">
                             <label for="">Numéro téléphone</label>
                             <input type="text" class="form-control"
@@ -36,8 +43,7 @@
                         </div>
                     </div>
 
-
-                    <div class="col-md-3 col-sm-3">
+                    <div class="col-md-4 col-sm-4">
                         <div class="form-group">
                             <label for="">Adresse mail</label>
                             <input type="email" class="form-control"
