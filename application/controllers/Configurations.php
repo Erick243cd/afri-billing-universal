@@ -2,37 +2,38 @@
 
 class Configurations extends CI_Controller
 {
-	public function rate()
-	{
-		if (!isLoggedIn()) redirect('pages/connexion');
+    public function rate()
+    {
+        if (!isLoggedIn()) redirect('pages/connexion');
 
-		if (userSessData()->role_utilisateur === 'admin') {
+        if (userSessData()->role_utilisateur === 'admin') {
 
-			$data = array(
-				'rate' => $this->db->get('lq_rates')->row(),
-				'title' => "Fixation du taux"
-			);
+            $data = array(
+                'rate' => $this->db->get('lq_rates')->row(),
+                'title' => "Fixation du taux"
+            );
 
-			$this->load->view('dashboards/header');
-			$this->load->view('configurations/rate', $data);
-			$this->load->view('dashboards/footer');
+            $this->load->view('dashboards/header');
+            $this->load->view('configurations/rate', $data);
+            $this->load->view('dashboards/footer');
 
-		} else {
-			show_error("<b>Error</b>  Vous n'avez pas l'autorisation d'effectuer cette opération");
-		}
-	}
+        } else {
+            show_error("<b>Error</b>  Vous n'avez pas l'autorisation d'effectuer cette opération");
+        }
+    }
 
-	public function updateRate()
-	{
-		$data = array(
-			'rate_value' => $this->input->post('rateValue')
-		);
-		$this->db->update('lq_rates', $data);
+    public function updateRate()
+    {
+        $data = array(
+            'rate_value' => $this->input->post('rateValue')
+        );
+        $this->db->update('lq_rates', $data);
         $this->session->set_flashdata('success', 'Modifications effectuées avec succès');
         redirect('configurations/rate');
-	}
+    }
 
-    public function companyInfos(){
+    public function companyInfos()
+    {
         if (!isLoggedIn()) redirect('pages/connexion');
 
         if (userSessData()->role_utilisateur === 'admin') {

@@ -12,9 +12,14 @@
             </div>
         </div>
         <div class="card fadeIn mb-4">
-            <div class="text-danger">
-                <?php echo validation_errors(); ?>
-            </div>
+            <?php if ($this->session->flashdata('success')) : ?>
+                <div class="alert alert-success alert-dismissible" role="alert" id="connexion-failed">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="btn-close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong><?php echo $this->session->flashdata('success'); ?></strong>
+                </div>
+            <?php endif; ?>
             <div class="card-body">
                 <?= form_open('configurations/updateRate'); ?>
                 <div class="row">

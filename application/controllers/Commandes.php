@@ -80,13 +80,14 @@ class Commandes extends CI_Controller
 					'is_cash' => 1,//isset($is_cash) ? $is_cash : 0,
 					'userId' => $userId,
 					'salespointId' => $salesPointId,
-					'currency' => $this->db->get('lq_currencies')->row()->currencyValue
+					'currency' => activeCurrency()->currencyShort,
+                    'rate'=>activeRate()
 				);
 
 				//Mise jour de la quantité
 				$product = $this->sales_point_model->getQuantity($items['id'], $salesPointId);
 
-				if ($items['qty'] > $product->qte_actuelle) {
+				if ($items['qty'] > $product->disponibleQty) {
 					$this->session->set_flashdata('error', "<b>Erreur</b>, 
 														La quantité en stock de l'article <b>{$product->designation}</b>
 														 est inférieure à celle qui est saisie,
